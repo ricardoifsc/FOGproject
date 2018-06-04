@@ -14,10 +14,9 @@ RUN apt update && \
     apt install git iproute2 -y && \
     chmod 0755 /docker-entrypoint.sh && \
     chmod 0755 /etc/init.d/start.services && \
-    git -C /opt clone https://github.com/fogproject/fogproject.git fog_1.5.1 && \
-    cd /opt/fog_1.5.1/bin ; sh -c '/bin/echo -e "\nNormal\n191.36.8.25\nY\nbond0\nN\nN\nN\nN\nY\n\n\n" | /bin/bash installfog.sh'
-##&& \
-#    /bin/rm -rf /opt/fog_1.5.1
+    git -C /opt clone https://github.com/fogproject/fogproject.git Install_fog && \
+    cd /opt/Install_fog/bin ; sh -c '/bin/echo -e "\nNormal\n191.36.8.25\nY\nbond0\nN\nN\nN\nN\nY\n\n\n" | /bin/bash installfog.sh' && \
+    /bin/rm -rf /opt/Install_fog
 
 EXPOSE 21 111 2049 8083 44383 69/udp
 
